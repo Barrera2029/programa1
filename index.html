@@ -1,0 +1,154 @@
+
+<!-- //Al escribir ! + TAB se abrirá automáticamente todo ese segemento. -->
+<!DOCTYPE html> 
+<html> <!--Todo documento html contendrá esta etiqueta-->
+<head> <!-- en la etiqueta head se agregan las características que tendrá la página web-->
+    <title>mi primera web</title> <!-- título de la página-->
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style> <!-- Esto hace parte de CSS y se utiliza para que todas las tablas tengan bordes-->
+</head>
+<body> <!--  en la etiqueta body se agrega todo el contenido de la web-->
+    <!-- EL contenido dentro de body siempre debe tener identación-->
+
+    <table style="width: 500px;"> <!--"TABLE" se usa para crear tablas, el STYLE puede también usarse para cambiar el tamaño de la tabla-->
+        <thead>
+            <tr> 
+                <th>Producto</th> <!--"th" Es el título de cada columna, cada th es una columna-->
+                <th>Precio</th>
+            </tr> <!--Tr significa table row "fila de tabla"-->
+        </thead> <!-- "THEAD" sirve para agrupar los elementos que se encuentran en la cabecera de las tablas-->
+
+        <tbody>
+            <tr>
+                <td> Hola beats</td> <!-- Es la descripción del título de cada columna "th"-->
+                <td> gratis</td>
+            </tr>
+            
+            <tr>
+                <td> Chanchito</td> 
+                <td> 100$ USD</td>
+                
+            </tr>
+            <tr>
+                <td> Chanchito feliz muy feliz<br> pero muy muy muy feliz xd</td> 
+                <td> 250$ USD</td>
+                
+            </tr>
+        </tbody> <!--Sirve para agrupar las filas que pertenecezcan al cuerpo de la tabla -->
+        <!--"thead" y "tbody" solo sirve para que algunos navegadores puedan habilitar un scroll separado de la cabecera-->
+        <tfoot>
+            <td></td>
+            <td>TOTAL: 350$ USD</td>
+        </tfoot> <!-- Esto es un pie de tabla-->
+    </table>
+
+
+
+    <ul> <!--Esto es una lista NO ordenada "ul", dentro de la misma se usa "li" para emepzar a enlistar elementos.-->
+        <li>Elemento1</li>
+        <li>Elemento2</li>
+        <li>Elemento3</li>
+        <li>Elemento4</li>
+    </ul>
+
+    <hr>
+
+    <ol> <!--Esto es una lista ordenada "ol" y se agregará de manera incremental dependiendo de cuantos elementos se agreguen-->
+        <li value="50">Elemento1</li>
+        <li value="45">Elemento2</li>
+        <li>Elemento3</li>
+        <li>Elemento4</li>
+        <li>
+            <ol>
+                <li style="list-style-type: lower-roman;">SubElemento3</livalue>
+                <li style="list-style-type: lower-roman;">SubElemento4</li> <!--El comando "style="list-style-type:LISTA DESPLEGABLE (CTRL+SPACE)" cambia los simbolos de enumeración de una lista-->
+            </ol> <!-- Así es como se anidan listas dentro de listas: agrega "li", luego "ol" y nuevamente "il".-->
+        </li>
+    </ol> <!--Al utilizar = value="#" dentro de "li" se podrá cambiar el número de la lista, y a partir del número que se anexe se creará otro aumento automático.-->
+
+
+
+
+    <form action="/formulario" method="GET"> <!-- esta etiqueta se usa para crear formularios.
+    PARA HACER EL ENVÍO DE DATOS A UN SERVIDOR SE DEBE HACER LO SIGUIENTE:
+    Escribir: form action="una ruta dentro del servidor (podría ser también dentro de otra aplicación o web"
+    method="escribir el método a utilizar para poder enviar los datos al serviror" se puede utilizar GET o POST.
+    GET: envía los valores a través de los campos de la URL (SOLO PERMITE UNA URL CON NO MÁS DE 255 CARACTERES)
+    POST: Envía los valores a través de la inspección de formulario por network en la pestaña headers 
+    Para proteger los datos de forma segura se debe conseguir certificados que se encarguen de encriptar todas las conexiones. 
+    -->
+        <label for="Nombre"> Nombre </label> <!--"label" esta etiqueta se usa para indicar el dato que se está solicitando-->
+        <input value="chanchito" type="text" id="Nombre" name="Nombre" placeholder="Nombre" /> <!--Input se utiliza para que el usuario escriba datos-->
+        <!-- propiedades de la etiqueta Label:
+        for="Nombre del dato ". Se utiliza para que al dar click al dato que se solicita, se habilite el campo para escribir sobre este. 
+        -->
+        
+        <!--Propiedades de la etiqueta INPUT:
+        id= "Nombre colocado dentro del for". Una vez realizado el for, se debe colocar en input el comando id para habilitar el foco del campo. 
+        name="nombre de los datos del formulario." Indica el nombre que tendrá la llave donde se guradarán los datos de usuarios de un dato.
+        palceholder="texto". Se utiliza para indicar lo que debe ir dentro de un campo, es decir se muestra en letra clara el contenido.
+        type="" Este contiene varios valores que cambian el campo de respuesta del formulario como:
+        type="submit": hace que se transforme en un botón
+        type="text": se convierte en texto (es su valor por defecto)
+        type="email": ingresa valor de tipo email
+        type="password": Ingresa el texto como contraseña (no es visible)
+        type="radio": convierte el campo en una esfera que se puede seleccionar
+        type="checkbox": convierte el campo en un cuadrado que se puede seleccionar
+        type="file": convierte el campo en una sección para poder subir archivos
+        value="texto": esto rellena el campo que debería llenar el usuario.-->
+        
+        <br>
+        <label for="apellido"> Apellido </label>
+        <input value="feliz" type="text" id="Apellido" name="Apellido" placeholder="Apellido" />
+        <br>
+        <br>
+        <label for="comentario">Comentarios</label> 
+        <textarea cols="50" rows="10" id="comentario" placeholder="Ingrese comentario" name="Comentario">valor por defecto <!-- acá se escribe el texto que quiero que aparezca en el recuadro--> </textarea>
+        <!--la etiqueta "textarea" tiene propiedades muy similares al input y se usa para crear un área para escribir texto.
+        también se puede especificar de la siguiente manera: 
+        rows="dimensión de filas". 
+        cols="dimensión de columnas".
+        -->
+
+        <br>
+        <button type="button">TIPO BOTÓN</button> <!-- esto es un botón 
+        posee tres tipos de type: (TAMBIEN SE LE PUEDEN AÑADIR MAS ETIQUETAS HTML DENTRO DE ESTOS)
+        type="button": este botón se le da el comportamiento que quiero que tenga pero se hace con JS.
+        type="submit": envía el formulario
+        type="reset": deja el formulario con los valores iniciales (borra lo que había copiado el usuario) -->
+        <button type="reset">TIPO RESET</button>
+        <button type="submit">TIPO SUBMIT</button>
+        <!-- la etiqueta de botton es mucho mas personalizable que una etiqueta de input tipo submit -->
+    </form>
+
+    <h1>Mi primer heading</h1> <!-- título del contenido-->
+    <h2>Mi segundo heading</h2> <!-- los títulos tienen tamaños y los definen el núero después de la h-->
+    <h3>Mi tercer heading</h3>
+    <h4>Mi cuarto heading</h4>
+    <h5>Mi quinto heading</h5>
+    <h6>Mi sexto heading</h6> <!-- solo existen 6 headings-->
+    <!--los heading no se deben utilizar para cambiar los estilos de los textos-->
+
+    <p>Chancho feliz</p> <!-- esta es la etiqueta de párrafo-->
+    <p>Chancho muy triste</p> <!--agrega texto en distintos párrafos creando otra etiqueta de p-->
+    <hr> <!-- "hr"crea líneas de espacio entre párrafos y títulos (Esta tiqueta no tiene cierre)-->
+    <h2>Chancho felipe</h2>
+    <p>más texto xd</p> 
+
+    <P>Este es un texto <span style="color:rgb(6, 246, 62)">mucho más largo </span> 
+        para mostrar <br><!--La etiqueta "br" sirve para pasar las líneas hacia abajo--> </br>más contenido
+        y enseñar la etiqueta de <br></br>span!
+    </P> <!-- la etiqueta "span" se usitliza para encontrar texto y se debe utilizar con CSS "-->
+    <a target="_blank" href="https://www.google.com">IR A GOOGLE</a> <!--Esta etiqueta "a" se usa para insertar links-->
+    <!-- al usar el comando "target= "_blank" " al abrir un vínculo se abrirá en otra pestaña adicional-->
+    <br></br>
+    <img src="IMG/original.jpg" height="400" width="350" /> <!--La etiqueta img se puede cerrar dejando el slash en la misma y no creando una nueva--> 
+    <!--img sirve para agregar imágenes y estas se pueden enlazar facilmente al yo agregarlas a la misma carpeta del archivo html-->
+    <!-- al utilizar height o width dentro de la etiqueta img se puede ajustar las dimensiones de la imagen-->
+
+    
+</body>
+</html>
